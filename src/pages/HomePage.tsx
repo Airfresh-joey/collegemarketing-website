@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { states, getTotalSchoolCount } from '../data/schools'
+import { blogPosts } from '../data/blogPosts'
 
 export default function HomePage() {
   const totalSchools = getTotalSchoolCount()
@@ -96,6 +97,26 @@ export default function HomePage() {
           </div>
           <div className="section-cta">
             <Link to="/schools" className="btn btn-outline">Browse All Schools</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="blog-preview">
+        <div className="container">
+          <h2>Latest from the Blog</h2>
+          <p className="section-subtitle">Insights and strategies for campus marketing success</p>
+          <div className="blog-preview-grid">
+            {blogPosts.slice(0, 3).map((post) => (
+              <Link to={`/blog/${post.slug}`} className="blog-preview-card" key={post.slug}>
+                <div className="blog-preview-category">{post.category}</div>
+                <h3>{post.title}</h3>
+                <p>{post.excerpt}</p>
+                <span className="blog-preview-link">Read More &rarr;</span>
+              </Link>
+            ))}
+          </div>
+          <div className="blog-preview-cta">
+            <Link to="/blog" className="btn btn-outline">View All Posts</Link>
           </div>
         </div>
       </section>

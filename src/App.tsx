@@ -5,6 +5,8 @@ import SchoolsIndex from './pages/SchoolsIndex'
 import StateSchools from './pages/StateSchools'
 import SchoolPage from './pages/SchoolPage'
 import ServicesPage from './pages/ServicesPage'
+import BlogList from './components/BlogList'
+import BlogPost from './components/BlogPost'
 import './App.css'
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Route path="/schools/:stateSlug/:schoolSlug" element={<SchoolPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/:serviceSlug" element={<ServicesPage />} />
+        <Route path="/blog" element={<BlogList />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Route>
     </Routes>
   )
