@@ -42,6 +42,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
 }
 
 .logo-icon {
@@ -354,26 +355,325 @@ body {
   opacity: 0.7;
 }
 
+/* Section CTA */
+.section-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.btn-outline {
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  border: 2px solid #1e40af;
+  color: #1e40af;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background: #1e40af;
+  color: #fff;
+}
+
+.campus-tag-link {
+  text-decoration: none;
+  background: #1e40af;
+  color: #fff;
+  border-color: #1e40af;
+  cursor: pointer;
+}
+
+.campus-tag-link:hover {
+  background: #7c3aed;
+  border-color: #7c3aed;
+}
+
+/* Page Hero */
+.page-hero {
+  background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+  color: white;
+  padding: 120px 2rem 60px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.page-hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.page-hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Page Content */
+.page-content {
+  padding: 60px 2rem;
+  background: #fff;
+}
+
+/* States Grid */
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.state-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #1f2937;
+  transition: all 0.3s;
+}
+
+.state-card:hover {
+  border-color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.1);
+}
+
+.state-card h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.state-count {
+  font-size: 0.85rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+/* Schools List */
+.school-section-title {
+  font-size: 1.8rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.school-section-title:first-child {
+  margin-top: 0;
+}
+
+.schools-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.school-card {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #1f2937;
+  transition: all 0.3s;
+}
+
+.school-card:hover {
+  border-color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.1);
+}
+
+.school-card h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+}
+
+.school-city {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* School Detail */
+.school-detail {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.school-info h2 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.school-info p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.sidebar-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar-card h3 {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.sidebar-card p {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.campus-details-list {
+  list-style: none;
+  padding: 0;
+}
+
+.campus-details-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  color: #4b5563;
+}
+
+.campus-details-list li:last-child {
+  border-bottom: none;
+}
+
+.campus-details-list a {
+  color: #1e40af;
+  text-decoration: none;
+}
+
+.campus-details-list a:hover {
+  text-decoration: underline;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.feature-check {
+  color: #16a34a;
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Page CTA */
+.page-cta {
+  padding: 80px 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+  color: white;
+}
+
+.page-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-cta p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* Service card as link */
+a.service-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.1rem;
   }
-  
+
   .hero-cta {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .services-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .logo {
     font-size: 1.1rem;
+  }
+
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .school-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .states-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schools-list {
+    grid-template-columns: 1fr;
   }
 }
