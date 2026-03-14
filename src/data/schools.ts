@@ -7,6 +7,11 @@ export interface School {
   type: string
   enrollment: number
   website: string
+  locale: string
+  isHBCU: boolean
+  hasMedical: boolean
+  carnegie: string
+  description: string
 }
 
 export interface StateData {

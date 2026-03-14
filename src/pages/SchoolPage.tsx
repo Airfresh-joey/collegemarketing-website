@@ -59,12 +59,7 @@ export default function SchoolPage() {
           <div className="school-detail">
             <div className="school-info">
               <h2>Why {school.name}?</h2>
-              <p>
-                With {school.enrollment.toLocaleString()} students, {school.name} is one of the largest and most
-                influential campuses in {state.name}. Located in {school.city}, this {school.type.toLowerCase()} offers
-                brands unmatched access to a highly engaged college audience. Our local marketing team in {school.city} knows
-                the campus culture, the hot spots, and the student communities that drive word-of-mouth.
-              </p>
+              <p>{school.description}</p>
               <p>
                 Whether you're launching a new product, building brand awareness, or driving app downloads,
                 College Marketing Co delivers authentic campus activations that resonate with {school.name} students.
