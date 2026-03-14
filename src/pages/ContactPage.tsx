@@ -83,7 +83,7 @@ export default function ContactPage() {
                 <div className="success-message">
                   <span className="success-icon">✓</span>
                   <h3>Message Sent!</h3>
-                  <p>Thanks for reaching out. We'll get back to you within 24 hours.</p>
+                  <p>Thanks for reaching out. We'll be in touch soon.</p>
                   <button onClick={() => setStatus('idle')} className="btn btn-outline">
                     Send Another Message
                   </button>
