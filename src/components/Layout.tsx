@@ -13,7 +13,7 @@ export default function Layout() {
             <Link to="/services">Services</Link>
             <Link to="/schools">Schools</Link>
             <Link to="/blog">Blog</Link>
-            <a href="/#contact">Contact</a>
+            <Link to="/contact">Contact</Link>
           </div>
         </div>
       </nav>
@@ -34,7 +34,7 @@ export default function Layout() {
               <Link to="/services">Services</Link>
               <Link to="/schools">Schools</Link>
               <Link to="/blog">Blog</Link>
-              <a href="/#contact">Contact</a>
+              <Link to="/contact">Contact</Link>
               <a href="mailto:hello@collegemarketing.co">hello@collegemarketing.co</a>
             </div>
           </div>
