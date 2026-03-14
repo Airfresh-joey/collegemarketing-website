@@ -19,7 +19,7 @@ export default function SchoolPage() {
   }
 
   const { state, school } = result
-  const photoQuery = encodeURIComponent(`${school.name} campus university`)
+  const photoQuery = encodeURIComponent(`${school.name} ${school.city} university campus`)
 
   return (
     <>

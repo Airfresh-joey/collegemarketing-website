@@ -38,15 +38,23 @@ export default function StateSchools() {
               <Link
                 key={school.slug}
                 to={`/schools/${state.slug}/${school.slug}`}
-                className="school-card"
+                className="school-card school-card-with-image"
               >
-                <div>
-                  <h3>{school.name}</h3>
-                  <span className="school-city">{school.city}, {state.abbreviation}</span>
-                </div>
-                <div className="school-card-meta">
-                  <span className="school-card-type">{school.type}</span>
-                  <span className="school-card-enrollment">{formatEnrollment(school.enrollment)} students</span>
+                <img
+                  src={`https://source.unsplash.com/400x300/?${encodeURIComponent(school.name + ' ' + school.city + ' university campus')}`}
+                  alt={`${school.name} campus`}
+                  className="school-card-image"
+                  loading="lazy"
+                />
+                <div className="school-card-body">
+                  <div>
+                    <h3>{school.name}</h3>
+                    <span className="school-city">{school.city}, {state.abbreviation}</span>
+                  </div>
+                  <div className="school-card-meta">
+                    <span className="school-card-type">{school.type}</span>
+                    <span className="school-card-enrollment">{formatEnrollment(school.enrollment)} students</span>
+                  </div>
                 </div>
               </Link>
             ))}

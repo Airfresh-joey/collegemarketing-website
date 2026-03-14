@@ -529,6 +529,29 @@ body {
   color: #6b7280;
 }
 
+/* School Card with Image */
+.school-card-with-image {
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.school-card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.school-card-body {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+}
+
 /* School Detail */
 .school-detail {
   display: grid;
@@ -1372,16 +1395,229 @@ a.service-card {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-form-wrapper {
     padding: 24px;
   }
-  
+
   .contact-page .page-hero h1 {
     font-size: 2rem;
+  }
+}
+
+/* Case Studies Page */
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2.5rem;
+}
+
+.case-study-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.case-study-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(30, 64, 175, 0.12);
+}
+
+.case-study-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.case-study-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+}
+
+.case-study-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.9);
+  color: #1e40af;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.case-study-content {
+  padding: 2rem;
+}
+
+.case-study-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.case-study-client {
+  font-weight: 600;
+  color: #1e40af;
+  font-size: 0.9rem;
+}
+
+.case-study-region {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.case-study-content h3 {
+  font-size: 1.4rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.case-study-section {
+  margin-bottom: 1.5rem;
+}
+
+.case-study-section h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.case-study-section p {
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.case-study-results {
+  list-style: none;
+  padding: 0;
+}
+
+.case-study-results li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.case-study-results li:last-child {
+  border-bottom: none;
+}
+
+.case-study-results li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.case-study-btn {
+  margin-top: 0.5rem;
+}
+
+/* Case Studies Homepage Preview */
+.case-studies-preview {
+  padding: 100px 2rem;
+  background: #fff;
+}
+
+.case-studies-preview h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.case-studies-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.case-study-preview-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: block;
+}
+
+.case-study-preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.1);
+  border-color: #1e40af;
+}
+
+.case-study-preview-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.case-study-preview-content {
+  padding: 1.5rem;
+}
+
+.case-study-preview-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1e40af;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.case-study-preview-content h3 {
+  font-size: 1.15rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.case-study-preview-client {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.case-study-preview-stat {
+  background: #f0fdf4;
+  color: #15803d;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-studies-preview-grid {
+    grid-template-columns: 1fr;
   }
 }

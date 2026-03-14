@@ -12,6 +12,7 @@ export default function Layout() {
           <div className="nav-links">
             <Link to="/services">Services</Link>
             <Link to="/schools">Schools</Link>
+            <Link to="/case-studies">Case Studies</Link>
             <Link to="/blog">Blog</Link>
             <Link to="/contact">Contact</Link>
           </div>
@@ -33,6 +34,7 @@ export default function Layout() {
             <div className="footer-links">
               <Link to="/services">Services</Link>
               <Link to="/schools">Schools</Link>
+              <Link to="/case-studies">Case Studies</Link>
               <Link to="/blog">Blog</Link>
               <Link to="/contact">Contact</Link>
               <a href="mailto:hello@collegemarketing.co">hello@collegemarketing.co</a>

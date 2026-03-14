@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { states, getTotalSchoolCount } from '../data/schools'
 import { services } from '../data/services'
 import { blogPosts } from '../data/blogPosts'
+import { caseStudies } from './CaseStudiesPage'
 
 export default function HomePage() {
   const totalSchools = getTotalSchoolCount()
@@ -85,6 +86,34 @@ export default function HomePage() {
           </div>
           <div className="section-cta">
             <Link to="/schools" className="btn btn-outline">Browse All Schools</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="case-studies-preview">
+        <div className="container">
+          <h2>Proven Results on Campus</h2>
+          <p className="section-subtitle">See how we've helped brands connect with college students</p>
+          <div className="case-studies-preview-grid">
+            {caseStudies.slice(0, 3).map((study) => (
+              <Link to="/case-studies" className="case-study-preview-card" key={study.slug}>
+                <div
+                  className="case-study-preview-image"
+                  style={{
+                    backgroundImage: `url(https://source.unsplash.com/600x300/?${encodeURIComponent(study.imageQuery)})`,
+                  }}
+                />
+                <div className="case-study-preview-content">
+                  <span className="case-study-preview-tag">{study.service}</span>
+                  <h3>{study.title}</h3>
+                  <p className="case-study-preview-client">{study.client} &middot; {study.region}</p>
+                  <div className="case-study-preview-stat">{study.results[0]}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="section-cta">
+            <Link to="/case-studies" className="btn btn-outline">View All Case Studies</Link>
           </div>
         </div>
       </section>
