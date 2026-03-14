@@ -32,7 +32,7 @@ export default function SchoolsIndex() {
         <div className="container">
           <h2>Don't See Your Campus?</h2>
           <p>We're expanding to new schools every month. Let us know where you need coverage.</p>
-          <a href="mailto:hello@collegemarketing.co" className="btn btn-primary btn-lg">Contact Us</a>
+          <Link to="/contact" className="btn btn-primary btn-lg">Contact Us</Link>
         </div>
       </section>
     </>

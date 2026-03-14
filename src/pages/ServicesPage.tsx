@@ -1,76 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-
-interface ServiceDetail {
-  slug: string
-  title: string
-  icon: string
-  description: string
-  features: string[]
-  cta: string
-}
-
-const services: ServiceDetail[] = [
-  {
-    slug: 'student-brand-ambassadors',
-    title: 'Student Brand Ambassadors',
-    icon: '👥',
-    description: 'Recruit and manage passionate student advocates who authentically represent your brand on campus. Our ambassador programs leverage peer-to-peer influence to build genuine brand awareness and loyalty among college students.',
-    features: [
-      'Recruit top student talent at target campuses',
-      'Train ambassadors on brand messaging and values',
-      'Manage campaigns with real-time reporting',
-      'Drive social media engagement and word-of-mouth',
-      'Create authentic content from student perspectives',
-      'Track ROI with detailed analytics dashboards',
-    ],
-    cta: 'Build Your Ambassador Team',
-  },
-  {
-    slug: 'social-media-campaigns',
-    title: 'Social Media Campaigns',
-    icon: '📱',
-    description: 'Student-led content creation and social amplification that resonates with college audiences. Our campaigns are designed by students, for students, ensuring authentic engagement across all major platforms.',
-    features: [
-      'Platform-specific content strategies (TikTok, Instagram, Snapchat)',
-      'Student influencer partnerships and UGC campaigns',
-      'Viral challenge and trend activation',
-      'Campus-specific hashtag campaigns',
-      'Performance tracking and optimization',
-      'Real-time social listening and engagement',
-    ],
-    cta: 'Launch a Social Campaign',
-  },
-  {
-    slug: 'campus-events',
-    title: 'Campus Events',
-    icon: '🎉',
-    description: 'Experiential activations, pop-ups, and event staffing that create memorable brand experiences. From orientation week to homecoming, we produce events that students actually want to attend.',
-    features: [
-      'Custom event planning and production',
-      'Pop-up experiences and brand activations',
-      'Event staffing with trained student ambassadors',
-      'Orientation week and welcome programs',
-      'Homecoming and game day activations',
-      'Spring break and finals week programming',
-    ],
-    cta: 'Plan Your Campus Event',
-  },
-  {
-    slug: 'sampling-programs',
-    title: 'Sampling Programs',
-    icon: '🎯',
-    description: 'Strategic product distribution and demos that drive trial and word-of-mouth. Our sampling programs are targeted to reach the right students at the right moments on campus.',
-    features: [
-      'High-traffic campus location identification',
-      'Targeted distribution by demographic and interest',
-      'Product demonstration and education',
-      'Digital coupon and follow-up integration',
-      'Feedback collection and consumer insights',
-      'Multi-campus coordinated sampling tours',
-    ],
-    cta: 'Start Sampling on Campus',
-  },
-]
+import { services } from '../data/services'
 
 export default function ServicesPage() {
   const { serviceSlug } = useParams<{ serviceSlug: string }>()
@@ -120,7 +49,7 @@ export default function ServicesPage() {
                 <Link key={s.slug} to={`/services/${s.slug}`} className="service-card">
                   <div className="service-icon">{s.icon}</div>
                   <h3>{s.title}</h3>
-                  <p>{s.description.substring(0, 100)}...</p>
+                  <p>{s.shortDescription.substring(0, 100)}...</p>
                 </Link>
               ))}
             </div>
@@ -131,7 +60,7 @@ export default function ServicesPage() {
           <div className="container">
             <h2>{service.cta}</h2>
             <p>Let's build a campus marketing program that delivers results</p>
-            <a href="mailto:hello@collegemarketing.co" className="btn btn-primary btn-lg">Get Started</a>
+            <Link to="/contact" className="btn btn-primary btn-lg">Get Started</Link>
           </div>
         </section>
       </>
@@ -156,7 +85,7 @@ export default function ServicesPage() {
               <Link key={service.slug} to={`/services/${service.slug}`} className="service-card">
                 <div className="service-icon">{service.icon}</div>
                 <h3>{service.title}</h3>
-                <p>{service.description}</p>
+                <p>{service.shortDescription}</p>
               </Link>
             ))}
           </div>
@@ -167,7 +96,7 @@ export default function ServicesPage() {
         <div className="container">
           <h2>Ready to Reach College Students?</h2>
           <p>Let's build a campus marketing program that delivers results</p>
-          <a href="mailto:hello@collegemarketing.co" className="btn btn-primary btn-lg">Get Started</a>
+          <Link to="/contact" className="btn btn-primary btn-lg">Get Started</Link>
         </div>
       </section>
     </>

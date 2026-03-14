@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import SchoolsIndex from './pages/SchoolsIndex'
 import StateSchools from './pages/StateSchools'
 import SchoolPage from './pages/SchoolPage'
+import SchoolServicePage from './pages/SchoolServicePage'
 import ServicesPage from './pages/ServicesPage'
 import BlogList from './components/BlogList'
 import BlogPost from './components/BlogPost'
@@ -18,6 +19,7 @@ function App() {
         <Route path="/schools" element={<SchoolsIndex />} />
         <Route path="/schools/:stateSlug" element={<StateSchools />} />
         <Route path="/schools/:stateSlug/:schoolSlug" element={<SchoolPage />} />
+        <Route path="/schools/:stateSlug/:schoolSlug/:serviceSlug" element={<SchoolServicePage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/:serviceSlug" element={<ServicesPage />} />
         <Route path="/blog" element={<BlogList />} />

@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
-import { getSchoolBySlug } from '../data/schools'
+import { getSchoolBySlug, formatEnrollment } from '../data/schools'
+import { services } from '../data/services'
 
 export default function SchoolPage() {
   const { stateSlug, schoolSlug } = useParams<{ stateSlug: string; schoolSlug: string }>()
@@ -18,10 +19,15 @@ export default function SchoolPage() {
   }
 
   const { state, school } = result
+  const photoQuery = encodeURIComponent(`${school.name} campus university`)
 
   return (
     <>
-      <section className="page-hero">
+      <section className="school-hero" style={{
+        backgroundImage: `linear-gradient(rgba(30, 64, 175, 0.85), rgba(124, 58, 237, 0.9)), url(https://source.unsplash.com/1600x900/?${photoQuery})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
         <div className="container">
           <nav className="breadcrumb">
             <Link to="/">Home</Link> &raquo; <Link to="/schools">Schools</Link> &raquo;{' '}
@@ -29,8 +35,22 @@ export default function SchoolPage() {
           </nav>
           <h1>Campus Marketing at {school.name}</h1>
           <p className="page-hero-subtitle">
-            Student brand ambassadors, social media campaigns, and experiential marketing at {school.name} in {school.city}, {state.abbreviation}
+            Reach {formatEnrollment(school.enrollment)}+ students with targeted campus marketing in {school.city}, {state.abbreviation}
           </p>
+          <div className="school-hero-stats">
+            <div className="school-hero-stat">
+              <div className="school-hero-stat-number">{school.enrollment.toLocaleString()}</div>
+              <div className="school-hero-stat-label">Students</div>
+            </div>
+            <div className="school-hero-stat">
+              <div className="school-hero-stat-number">{school.type}</div>
+              <div className="school-hero-stat-label">Institution Type</div>
+            </div>
+            <div className="school-hero-stat">
+              <div className="school-hero-stat-number">{school.city}, {state.abbreviation}</div>
+              <div className="school-hero-stat-label">Location</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -38,34 +58,31 @@ export default function SchoolPage() {
         <div className="container">
           <div className="school-detail">
             <div className="school-info">
-              <h2>Marketing Services at {school.name}</h2>
+              <h2>Why {school.name}?</h2>
               <p>
-                College Marketing Co partners with student ambassadors at {school.name} to deliver
-                authentic campus marketing campaigns. Our {school.city}-based team understands the
-                unique culture and student community at {school.name}.
+                With {school.enrollment.toLocaleString()} students, {school.name} is one of the largest and most
+                influential campuses in {state.name}. Located in {school.city}, this {school.type.toLowerCase()} offers
+                brands unmatched access to a highly engaged college audience. Our local marketing team in {school.city} knows
+                the campus culture, the hot spots, and the student communities that drive word-of-mouth.
+              </p>
+              <p>
+                Whether you're launching a new product, building brand awareness, or driving app downloads,
+                College Marketing Co delivers authentic campus activations that resonate with {school.name} students.
               </p>
 
-              <div className="services-grid" style={{ marginTop: '2rem' }}>
-                <Link to="/services/student-brand-ambassadors" className="service-card">
-                  <div className="service-icon">👥</div>
-                  <h3>Student Brand Ambassadors</h3>
-                  <p>Recruit passionate {school.name} students to authentically represent your brand on campus</p>
-                </Link>
-                <Link to="/services/social-media-campaigns" className="service-card">
-                  <div className="service-icon">📱</div>
-                  <h3>Social Media Campaigns</h3>
-                  <p>Student-led content creation targeting the {school.name} community</p>
-                </Link>
-                <Link to="/services/campus-events" className="service-card">
-                  <div className="service-icon">🎉</div>
-                  <h3>Campus Events</h3>
-                  <p>Experiential activations and pop-ups at {school.name}</p>
-                </Link>
-                <Link to="/services/sampling-programs" className="service-card">
-                  <div className="service-icon">🎯</div>
-                  <h3>Sampling Programs</h3>
-                  <p>Strategic product distribution across the {school.name} campus</p>
-                </Link>
+              <h2 className="school-section-title" style={{ marginTop: '3rem' }}>Our Services at {school.name}</h2>
+              <div className="services-grid">
+                {services.map(service => (
+                  <Link
+                    key={service.slug}
+                    to={`/schools/${state.slug}/${school.slug}/${service.slug}`}
+                    className="service-card"
+                  >
+                    <div className="service-icon">{service.icon}</div>
+                    <h3>{service.title}</h3>
+                    <p>{service.shortDescription.replace('on campus', `at ${school.name}`)}</p>
+                  </Link>
+                ))}
               </div>
             </div>
 
@@ -73,17 +90,22 @@ export default function SchoolPage() {
               <div className="sidebar-card">
                 <h3>Campus Details</h3>
                 <ul className="campus-details-list">
+                  <li><strong>School:</strong> {school.name}</li>
                   <li><strong>Location:</strong> {school.city}, {state.abbreviation}</li>
-                  <li><strong>Type:</strong> {school.type === 'public' ? 'Public University' : 'Private University'}</li>
+                  <li><strong>Type:</strong> {school.type}</li>
+                  <li><strong>Enrollment:</strong> {school.enrollment.toLocaleString()}</li>
                   <li><strong>State:</strong> <Link to={`/schools/${state.slug}`}>{state.name}</Link></li>
+                  {school.website && (
+                    <li><strong>Website:</strong> <a href={school.website} target="_blank" rel="noopener noreferrer">{school.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></li>
+                  )}
                 </ul>
               </div>
               <div className="sidebar-card">
                 <h3>Start a Campaign</h3>
-                <p>Ready to reach students at {school.name}?</p>
-                <a href="mailto:hello@collegemarketing.co" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>
-                  Contact Us
-                </a>
+                <p>Ready to reach {formatEnrollment(school.enrollment)}+ students at {school.name}?</p>
+                <Link to="/contact" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>
+                  Get a Free Quote
+                </Link>
               </div>
             </div>
           </div>

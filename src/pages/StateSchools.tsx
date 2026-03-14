@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { getStateBySlug } from '../data/schools'
+import { getStateBySlug, formatEnrollment } from '../data/schools'
 
 export default function StateSchools() {
   const { stateSlug } = useParams<{ stateSlug: string }>()
@@ -17,9 +17,6 @@ export default function StateSchools() {
     )
   }
 
-  const publicSchools = state.schools.filter(s => s.type === 'public')
-  const privateSchools = state.schools.filter(s => s.type === 'private')
-
   return (
     <>
       <section className="page-hero">
@@ -36,41 +33,24 @@ export default function StateSchools() {
 
       <section className="page-content">
         <div className="container">
-          {publicSchools.length > 0 && (
-            <>
-              <h2 className="school-section-title">Public Universities</h2>
-              <div className="schools-list">
-                {publicSchools.map(school => (
-                  <Link
-                    key={school.slug}
-                    to={`/schools/${state.slug}/${school.slug}`}
-                    className="school-card"
-                  >
-                    <h3>{school.name}</h3>
-                    <span className="school-city">{school.city}, {state.abbreviation}</span>
-                  </Link>
-                ))}
-              </div>
-            </>
-          )}
-
-          {privateSchools.length > 0 && (
-            <>
-              <h2 className="school-section-title">Private Universities</h2>
-              <div className="schools-list">
-                {privateSchools.map(school => (
-                  <Link
-                    key={school.slug}
-                    to={`/schools/${state.slug}/${school.slug}`}
-                    className="school-card"
-                  >
-                    <h3>{school.name}</h3>
-                    <span className="school-city">{school.city}, {state.abbreviation}</span>
-                  </Link>
-                ))}
-              </div>
-            </>
-          )}
+          <div className="schools-list">
+            {state.schools.map(school => (
+              <Link
+                key={school.slug}
+                to={`/schools/${state.slug}/${school.slug}`}
+                className="school-card"
+              >
+                <div>
+                  <h3>{school.name}</h3>
+                  <span className="school-city">{school.city}, {state.abbreviation}</span>
+                </div>
+                <div className="school-card-meta">
+                  <span className="school-card-type">{school.type}</span>
+                  <span className="school-card-enrollment">{formatEnrollment(school.enrollment)} students</span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -78,7 +58,7 @@ export default function StateSchools() {
         <div className="container">
           <h2>Start a Campaign in {state.name}</h2>
           <p>Reach college students across {state.name}'s top campuses</p>
-          <a href="mailto:hello@collegemarketing.co" className="btn btn-primary btn-lg">Get Started</a>
+          <Link to="/contact" className="btn btn-primary btn-lg">Get Started</Link>
         </div>
       </section>
     </>
