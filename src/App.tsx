@@ -10,6 +10,12 @@ import BlogList from './components/BlogList'
 import BlogPost from './components/BlogPost'
 import ContactPage from './pages/ContactPage'
 import CaseStudiesPage from './pages/CaseStudiesPage'
+import HBCUMarketingPage from './pages/HBCUMarketingPage'
+import HSIMarketingPage from './pages/HSIMarketingPage'
+import CommunityCollegeMarketingPage from './pages/CommunityCollegeMarketingPage'
+import NILMarketingPage from './pages/NILMarketingPage'
+import GreekLifeMarketingPage from './pages/GreekLifeMarketingPage'
+import CollegeSportsMarketingPage from './pages/CollegeSportsMarketingPage'
 import './App.css'
 
 function App() {
@@ -23,6 +29,12 @@ function App() {
         <Route path="/schools/:stateSlug/:schoolSlug/:serviceSlug" element={<SchoolServicePage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/:serviceSlug" element={<ServicesPage />} />
+        <Route path="/hbcu-marketing" element={<HBCUMarketingPage />} />
+        <Route path="/hsi-marketing" element={<HSIMarketingPage />} />
+        <Route path="/community-college-marketing" element={<CommunityCollegeMarketingPage />} />
+        <Route path="/nil-marketing" element={<NILMarketingPage />} />
+        <Route path="/greek-life-marketing" element={<GreekLifeMarketingPage />} />
+        <Route path="/college-sports-marketing" element={<CollegeSportsMarketingPage />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />

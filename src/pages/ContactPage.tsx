@@ -13,7 +13,7 @@ export default function ContactPage() {
     const formData = new FormData(form)
     
     try {
-      const response = await fetch('https://formspree.io/f/meerzldd', {
+      const response = await fetch('https://formspree.io/f/myznknaa', {
         method: 'POST',
         body: formData,
         headers: {
@@ -167,6 +167,7 @@ export default function ContactPage() {
                   </div>
 
                   <input type="text" name="_gotcha" style={{ display: 'none' }} />
+                  <input type="hidden" name="_source" value="CollegeMarketing" />
 
                   <button 
                     type="submit" 

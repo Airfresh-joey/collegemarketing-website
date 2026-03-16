@@ -1621,3 +1621,284 @@ a.service-card {
     grid-template-columns: 1fr;
   }
 }
+
+/* Navigation Dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  color: #1f2937;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-dropdown-trigger:hover {
+  color: #1e40af;
+}
+
+.nav-dropdown-trigger::after {
+  content: ' \25BE';
+  font-size: 0.8em;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-width: 260px;
+  padding: 0.5rem 0;
+  z-index: 1001;
+  margin-top: 0.5rem;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.65rem 1.25rem;
+  color: #1f2937;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.nav-dropdown-menu a:hover {
+  background: #f0f4ff;
+  color: #1e40af;
+}
+
+/* Specialty Page Styles */
+.specialty-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.specialty-intro h2 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.specialty-intro p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.specialty-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.specialty-stat {
+  text-align: center;
+}
+
+.specialty-stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #1e40af;
+  line-height: 1.2;
+}
+
+.specialty-stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.specialty-section {
+  margin-top: 4rem;
+}
+
+.specialty-section h2 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.specialty-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.specialty-feature {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.specialty-feature:hover {
+  border-color: #1e40af;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.08);
+}
+
+.specialty-feature h3 {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.specialty-feature p {
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Conference Cards */
+.conference-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.conference-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.conference-card:hover {
+  border-color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.08);
+}
+
+.conference-card h3 {
+  font-size: 1.3rem;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+.conference-card p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.conference-card-detailed .conference-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.conference-tagline {
+  font-size: 0.85rem;
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.conference-schools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.conference-school-tag {
+  background: #eff6ff;
+  color: #1e40af;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Greek Calendar */
+.greek-calendar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.calendar-item {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 4px solid #1e40af;
+}
+
+.calendar-item h3 {
+  font-size: 1.1rem;
+  color: #1e40af;
+  margin-bottom: 0.75rem;
+}
+
+.calendar-item p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    min-width: auto;
+    margin-top: 0;
+  }
+
+  .nav-dropdown-menu a {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .specialty-stats {
+    gap: 1.5rem;
+  }
+
+  .specialty-stat-number {
+    font-size: 2rem;
+  }
+
+  .specialty-features {
+    grid-template-columns: 1fr;
+  }
+
+  .conference-list {
+    grid-template-columns: 1fr;
+  }
+
+  .greek-calendar {
+    grid-template-columns: 1fr;
+  }
+}

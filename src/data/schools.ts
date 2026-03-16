@@ -45,3 +45,17 @@ export function formatEnrollment(enrollment: number): string {
   }
   return enrollment.toLocaleString()
 }
+
+export function getAllSchools(): { school: School; state: StateData }[] {
+  return states.flatMap(state =>
+    state.schools.map(school => ({ school, state }))
+  )
+}
+
+export function getHBCUs(): { school: School; state: StateData }[] {
+  return getAllSchools().filter(({ school }) => school.isHBCU)
+}
+
+export function getCommunityColleges(): { school: School; state: StateData }[] {
+  return getAllSchools().filter(({ school }) => school.type === 'Public Community College')
+}
