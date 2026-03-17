@@ -158,7 +158,7 @@ export default function CaseStudiesPage() {
                 <div
                   className="case-study-image"
                   style={{
-                    backgroundImage: `url(https://source.unsplash.com/800x400/?${encodeURIComponent(study.imageQuery)})`,
+                    backgroundImage: `url(https://picsum.photos/seed/${encodeURIComponent(study.imageQuery)}/800/400)`,
                   }}
                 >
                   <div className="case-study-overlay">

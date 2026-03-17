@@ -100,7 +100,7 @@ export default function HomePage() {
                 <div
                   className="case-study-preview-image"
                   style={{
-                    backgroundImage: `url(https://source.unsplash.com/600x300/?${encodeURIComponent(study.imageQuery)})`,
+                    backgroundImage: `url(https://picsum.photos/seed/${encodeURIComponent(study.imageQuery)}/600/300)`,
                   }}
                 />
                 <div className="case-study-preview-content">

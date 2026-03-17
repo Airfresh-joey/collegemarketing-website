@@ -41,7 +41,7 @@ export default function StateSchools() {
                 className="school-card school-card-with-image"
               >
                 <img
-                  src={`https://source.unsplash.com/400x300/?${encodeURIComponent(school.name + ' ' + school.city + ' university campus')}`}
+                  src={`https://picsum.photos/seed/${encodeURIComponent(school.name + '-' + school.city)}/400/300`}
                   alt={`${school.name} campus`}
                   className="school-card-image"
                   loading="lazy"

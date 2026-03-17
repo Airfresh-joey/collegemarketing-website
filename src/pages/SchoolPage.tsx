@@ -19,12 +19,12 @@ export default function SchoolPage() {
   }
 
   const { state, school } = result
-  const photoQuery = encodeURIComponent(`${school.name} ${school.city} university campus`)
+  const photoSeed = encodeURIComponent(`${school.name}-${school.city}`)
 
   return (
     <>
       <section className="school-hero" style={{
-        backgroundImage: `linear-gradient(rgba(30, 64, 175, 0.85), rgba(124, 58, 237, 0.9)), url(https://source.unsplash.com/1600x900/?${photoQuery})`,
+        backgroundImage: `linear-gradient(rgba(30, 64, 175, 0.85), rgba(124, 58, 237, 0.9)), url(https://picsum.photos/seed/${photoSeed}/1600/900)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}>
