@@ -56,6 +56,28 @@ export default function Layout() {
               <Link to="/contact">Contact</Link>
               <a href="mailto:hello@collegemarketing.co">hello@collegemarketing.co</a>
             </div>
+            <div className="footer-links">
+              <strong>Top Markets</strong>
+              <Link to="/college-marketing/boston">Boston</Link>
+              <Link to="/college-marketing/new-york-city">New York City</Link>
+              <Link to="/college-marketing/los-angeles">Los Angeles</Link>
+              <Link to="/college-marketing/chicago">Chicago</Link>
+              <Link to="/college-marketing/austin">Austin</Link>
+              <Link to="/college-marketing/atlanta">Atlanta</Link>
+              <Link to="/college-marketing/miami">Miami</Link>
+              <Link to="/college-marketing/philadelphia">Philadelphia</Link>
+            </div>
+            <div className="footer-links">
+              <strong>Industries</strong>
+              <Link to="/industries/food-and-beverage-college-marketing">Food & Beverage</Link>
+              <Link to="/industries/tech-and-apps-college-marketing">Tech & Apps</Link>
+              <Link to="/industries/health-and-wellness-college-marketing">Health & Wellness</Link>
+              <Link to="/industries/beauty-and-personal-care-college-marketing">Beauty & Personal Care</Link>
+              <Link to="/industries/cpg-consumer-packaged-goods-college-marketing">CPG</Link>
+              <Link to="/industries/financial-services-college-marketing">Financial Services</Link>
+              <Link to="/resources/how-much-does-college-marketing-cost">Pricing Guide</Link>
+              <Link to="/resources/college-marketing-for-startups">For Startups</Link>
+            </div>
           </div>
           <div className="footer-bottom">
             <p>&copy; 2026 College Marketing Co. All rights reserved.</p>

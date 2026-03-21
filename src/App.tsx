@@ -16,6 +16,10 @@ import CommunityCollegeMarketingPage from './pages/CommunityCollegeMarketingPage
 import NILMarketingPage from './pages/NILMarketingPage'
 import GreekLifeMarketingPage from './pages/GreekLifeMarketingPage'
 import CollegeSportsMarketingPage from './pages/CollegeSportsMarketingPage'
+import CityMarketingPage from './pages/CityMarketingPage'
+import IndustryPage from './pages/IndustryPage'
+import StateGuidePage from './pages/StateGuidePage'
+import ResourcePage from './pages/ResourcePage'
 import './App.css'
 
 function App() {
@@ -39,6 +43,14 @@ function App() {
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        {/* City marketing pages */}
+        <Route path="/college-marketing/:citySlug" element={<CityMarketingPage />} />
+        {/* Industry vertical pages */}
+        <Route path="/industries/:industrySlug" element={<IndustryPage />} />
+        {/* State guide pages */}
+        <Route path="/guides/:guideSlug" element={<StateGuidePage />} />
+        {/* Resource pages */}
+        <Route path="/resources/:resourceSlug" element={<ResourcePage />} />
       </Route>
     </Routes>
   )
